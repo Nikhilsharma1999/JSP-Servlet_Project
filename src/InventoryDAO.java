@@ -28,18 +28,18 @@ import java.util.List;
         	System.out.println(e);
         	}
         
-        try {
-			int x=0,y=10;
-			int z = y/x;
-			
-        } 
-		  catch (ArithmeticException e) {
-			// TODO: handle exception
-			System.out.print("Here is an Arithmetic error.");
-		  }  
-        finally {
-			
-		}
+//        try {
+//			int x=0,y=10;
+//			int z = y/x;
+//			
+//        } 
+//		  catch (ArithmeticException e) {
+//			// TODO: handle exception
+//			System.out.print("Here is an Arithmetic error.");
+//		  }  
+//        finally {
+//			
+//		}
         
         return connection;
     }
@@ -99,7 +99,7 @@ import java.util.List;
       } 
       return lst_inven;
   }
-  
+
 public boolean deleteProduct(int id) throws SQLException {
 boolean rowDeleted;
 try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(Delete_pro);) {
@@ -111,7 +111,7 @@ return rowDeleted;
 
 public boolean updateProduct(Inventory inven) throws SQLException {
 boolean rowUpdated;
-try (Connection connection = getConnection(); 
+try (Connection connection = getConnection();
 		PreparedStatement statement = connection.prepareStatement(Update_pro);) {
     statement.setString(1, inven.getName());
     statement.setInt(2, inven.getRating());
